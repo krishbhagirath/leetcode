@@ -1,3 +1,5 @@
+# NEETCODE EASY
+
 from typing import List
 
 # Submission 1 - Brute Force (nested loops)
