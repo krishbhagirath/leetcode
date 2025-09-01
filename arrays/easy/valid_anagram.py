@@ -5,6 +5,7 @@ def isAnagram(s: str, t: str) -> bool:
 
     frequency = [0] * 26  #26 letters in alphabet
     
+    # create list representing character occurrences in each word
     for letter in s:
         frequency[ord(letter) - ord('a')] += 1
     for letter in t:
@@ -20,3 +21,5 @@ def isAnagram(s: str, t: str) -> bool:
 print(isAnagram('racecar', 'caracre')) # True
 print(isAnagram('car', 'rat')) # False
 print(isAnagram('safe', 'asfr')) # False
+
+

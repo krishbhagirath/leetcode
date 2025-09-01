@@ -21,15 +21,15 @@ def twoSumWrong(nums: List[int], target: int):
 def twoSumOptimal(nums: List[int], target: int):
     seen = {} # dictionary (value/index pairs)
 
-    for i, x in enumerate(nums):
-        need = target - x # 3
-        if need in seen: # checks the keys of the dictionary for 'need'
-            return [seen[need], i] # if seen, return i (current index) and seen[need] (index of seen number)
-        seen[x] = i
+    for i, x in enumerate(nums): # allows you to loop while keeping track of index (i = index, x = value)
+        remainder = target - x
+        if remainder in seen: # checks the KEYS of the dictionary for 'remainder'
+            return [seen[remainder], i] # if seen, return i (current index) and seen[remainder] (index of seen number)
+        seen[x] = i # set index x to a value of i
 
     # NOTE
     # list: when you use 'in', it looks through the VALUES of the list (ex: nums[i] provides value of nums at index i)
-    # dictionaries: when you use 'in', it looks through the KEYS of the list (ex: seen[need] provides the key at which value 'need' is found in dictionary)
+    # dictionaries: when you use 'in', it looks through the KEYS of the list (ex: seen[remainder] provides the key at which value 'remainder' is found in dictionary)
 
 
 print("Brute Force Outputs:")
